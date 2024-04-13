@@ -1,0 +1,1 @@
+This would be a hypothetical module to develop an administrator site area if it is necessary.
