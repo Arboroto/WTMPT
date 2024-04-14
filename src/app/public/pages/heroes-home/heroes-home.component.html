@@ -1,22 +1,18 @@
-<p>heroes-home works!</p>
-<div class="heroList">
-    <div *ngFor="let h of heroes" class="hero">
-        <mat-card>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title><p>{{h.name}}</p></mat-card-title>
-              <mat-card-subtitle><p>{{h.power}}</p></mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image [src]="h.imgUrl" alt="Imagen del héroe" loading="lazy">
-            <mat-card-content class="hero-data">
-                <article>
-                    <p>{{h.description}}</p>
-                </article>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>EDIT</button>
-              <button mat-button>DELETE</button>
-            </mat-card-actions>
-          </mat-card>
-    </div>
+
+
+<mat-button-toggle-group #group="matButtonToggleGroup" value="list">
+    <mat-button-toggle value="grid" aria-label="Grid View">
+      <mat-icon>grid_view</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="list" aria-label="List view">
+      <mat-icon>view_list</mat-icon>
+    </mat-button-toggle>
+</mat-button-toggle-group>
+
+<div *ngIf="group.value === 'grid'" class="heroGrid">    
+    <app-hero-card *ngFor="let h of heroes" [hero]="h"></app-hero-card>
+</div>
+
+<div *ngIf="group.value === 'list'" class="heroList">
+    <app-hero-list-element *ngFor="let h of heroes" [hero]="h"></app-hero-list-element>    
 </div>

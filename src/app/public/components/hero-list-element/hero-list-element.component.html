@@ -1,0 +1,19 @@
+<mat-card class="hero-list-element">
+    <img mat-card-image [src]="hero.imgUrl" alt="Imagen del héroe" loading="lazy">
+    <div>
+        <mat-card-title><p>{{hero.name}}</p></mat-card-title>
+        <mat-card-subtitle><p>{{hero.power}}</p></mat-card-subtitle>
+    </div>
+    
+    <mat-card-content class="hero-data">
+        <article>
+            <p>{{hero.birth_date}}</p>
+            <p>{{hero.race}}</p>
+        </article>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-button>EDIT</button>
+        <button mat-button>DELETE</button>
+    </mat-card-actions>
+</mat-card>

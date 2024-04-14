@@ -9,10 +9,11 @@ import { HeroService } from 'src/app/core/shared/services/hero.service';
 })
 export class HeroesHomeComponent {
   public heroes: Hero[] = []
-  
+
   constructor(private heroService: HeroService){}
 
   ngOnInit(): void{
+    
     this.heroService.getHeroes().subscribe({
       next: (res)=>{
         this.heroes = res;

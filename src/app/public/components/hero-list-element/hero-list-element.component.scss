@@ -1,0 +1,14 @@
+.hero-list-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img{
+        min-width: 100px !important;
+        width: 100px;
+        height: 100px;
+        object-fit:cover; 
+        object-position: center;
+        
+    }
+}

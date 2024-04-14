@@ -1,16 +1,18 @@
-.heroList{
+.heroGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-   // grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }
-.hero{
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    img{
-        width: 400px;
-        height: 400px;
+
+@media screen and (max-width: 900px) {
+    .heroGrid{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .heroGrid{
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }

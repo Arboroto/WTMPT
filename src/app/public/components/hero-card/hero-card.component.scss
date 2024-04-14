@@ -1,0 +1,19 @@
+.hero{
+    height: 500px;
+    mat-card-content{
+        overflow: auto;
+        padding: 16px 16px !important;
+    }
+
+    mat-card-actions{
+       // bottom: 0;
+      //  position: absolute;
+    }
+
+    img{
+        width: auto;
+        object-fit: cover;
+        object-position: top;
+        height: 250px;
+    }
+}
