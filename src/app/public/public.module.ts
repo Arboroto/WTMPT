@@ -10,22 +10,32 @@ import { HeroListElementComponent } from './components/hero-list-element/hero-li
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from "../core/shared/shared.module";
+import { CreateEditHeroComponent } from './pages/create-edit-hero/create-edit-hero.component';
+import { HeroGalleryComponent } from './pages/hero-gallery/hero-gallery.component';
 
 
 @NgModule({
-  declarations: [
-    PublicComponent,
-    HeroesHomeComponent,
-    HeroCardComponent,
-    HeroListElementComponent
-  ],
-  imports: [
-    CommonModule,
-    PublicRoutingModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonToggleModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    declarations: [
+        PublicComponent,
+        HeroesHomeComponent,
+        HeroCardComponent,
+        HeroListElementComponent,
+        CreateEditHeroComponent,
+        HeroGalleryComponent
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    imports: [
+        CommonModule,
+        PublicRoutingModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonToggleModule,
+        MatInputModule,
+        FormsModule,
+        SharedModule
+    ]
 })
 export class PublicModule { }

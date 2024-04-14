@@ -1,0 +1,10 @@
+@import '../../theme/colors';
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background-color: $color-primary;
+    padding: 15px;
+    box-shadow: 6px 6px 2px 0px black;
+}

@@ -1,5 +1,5 @@
 export interface Hero {
-    id: number;
+    id?: number;
     name: string;
     real_name: string;
     race: string;
@@ -7,5 +7,5 @@ export interface Hero {
     power: string;
     birth_date: string;
     description: string;
-    imgUrl: string;
+    imgUrl?: string;
 }
