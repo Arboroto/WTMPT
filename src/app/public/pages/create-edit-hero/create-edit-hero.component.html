@@ -1,1 +1,13 @@
 <p>create-edit-hero works!</p>
+<form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Nombre del héroe">
+    <input formControlName="real_name" placeholder="Nombre real">
+    <input formControlName="gender" placeholder="Género">
+    <input formControlName="race" placeholder="Raza">
+    <input formControlName="birth_date" placeholder="Fecha de nacimiento" type="date">
+    <input formControlName="power" placeholder="Poder">
+    <input formControlName="imgUrl" placeholder="URL de la imagen">
+    <textarea formControlName="description" placeholder="Descripción"></textarea>
+    <button type="submit" [disabled]="!heroForm.valid">Enviar</button>
+  </form>
+  

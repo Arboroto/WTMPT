@@ -11,10 +11,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from "../core/shared/shared.module";
 import { CreateEditHeroComponent } from './pages/create-edit-hero/create-edit-hero.component';
 import { HeroGalleryComponent } from './pages/hero-gallery/hero-gallery.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -33,9 +34,11 @@ import { HeroGalleryComponent } from './pages/hero-gallery/hero-gallery.componen
         MatCardModule,
         MatIconModule,
         MatButtonToggleModule,
+        MatButtonModule,
         MatInputModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        ReactiveFormsModule
     ]
 })
 export class PublicModule { }

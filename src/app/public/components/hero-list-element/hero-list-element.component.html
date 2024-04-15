@@ -1,19 +1,33 @@
 <mat-card class="hero-list-element">
     <img mat-card-image [src]="hero.imgUrl" alt="Imagen del héroe" loading="lazy">
-    <div>
-        <mat-card-title><p>{{hero.name}}</p></mat-card-title>
-        <mat-card-subtitle><p>{{hero.power}}</p></mat-card-subtitle>
-    </div>
-    
-    <mat-card-content class="hero-data">
-        <article>
-            <p>{{hero.birth_date}}</p>
-            <p>{{hero.race}}</p>
-        </article>
-    </mat-card-content>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Superhéroe</td>
+                <td>Nombre</td>
+                <td>Nacimiento</td>
+                <td>Raza</td>
+                <td>Poder</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><p>{{hero.name}}</p></td>
+                <td><p>{{hero.real_name}}</p></td>
+                <td><p>{{hero.birth_date}}</p></td>
+                <td><p>{{hero.race}}</p></td>
+                <td><p>{{hero.power}}</p></td>
+            </tr>
+        </tbody>
+    </table>
 
     <mat-card-actions>
-        <button mat-button>EDIT</button>
-        <button mat-button (click)="deleteHero()">DELETE</button>
+        <button mat-fab color="primary" aria-label="edit button">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deleteHero()" mat-fab color="secondary" aria-label="delete button">
+            <mat-icon>delete</mat-icon>
+        </button>
     </mat-card-actions>
 </mat-card>

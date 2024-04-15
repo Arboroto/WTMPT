@@ -3,6 +3,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: calc(100vh - 127px - 62px);
     padding-top: 127px;
     padding-bottom: 62px;
+}
+
+::ng-deep mat-card-actions{
+    gap: 10px !important;
 }

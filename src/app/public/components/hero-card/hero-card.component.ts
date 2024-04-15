@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Hero } from 'src/app/core/models/hero.interface';
+import { HeroService } from 'src/app/core/shared/services/hero.service';
 
 @Component({
   selector: 'app-hero-card',
@@ -9,5 +10,16 @@ import { Hero } from 'src/app/core/models/hero.interface';
 export class HeroCardComponent {
 
   @Input() hero!: Hero;
+
+  constructor(private heroService: HeroService){}
+
+  deleteHero() {
+    this.heroService.deleteHero(this.hero.id!).subscribe({
+      next: (res)=>{},
+      error: (res)=>{
+        console.error("Error al eliminar", res)
+      }
+    })
+  }
 
 }

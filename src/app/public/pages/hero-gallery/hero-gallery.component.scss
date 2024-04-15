@@ -1,6 +1,7 @@
 .galleryContainer{
     overflow-y: auto;
     max-height: 80vh;
+    //padding: 2% 2%;
     .utilities{
         position: absolute;
         right: 25px;
@@ -15,13 +16,23 @@
         }
     }
 }
-
+.heroList{
+    display: grid;
+    gap:5px;
+    padding: 2% 2%;
+    >*{
+        box-shadow: 6px 6px 2px 0px black;
+    }
+}
 .heroGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    
+    padding: 2% 2%;
+    >*{
+        box-shadow: 6px 6px 2px 0px black;
+    }
 }
 
 @media screen and (max-width: 900px) {

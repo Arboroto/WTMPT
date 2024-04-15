@@ -9,9 +9,7 @@ import { HeroService } from 'src/app/core/shared/services/hero.service';
 })
 export class HeroListElementComponent {
 
-  constructor(private heroService: HeroService){
-
-  }
+  constructor(private heroService: HeroService){}
 
   @Input() hero!: Hero;
 
@@ -20,9 +18,7 @@ export class HeroListElementComponent {
       next: (res)=>{},
       error: (res)=>{
         console.error("Error al eliminar", res)
-      }, complete() {
-        // hay que refrescar la lista de héroes allí donde esté almacenado
-      },
+      }
     })
   }
 }
