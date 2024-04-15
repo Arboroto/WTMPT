@@ -16,6 +16,7 @@ import { SharedModule } from "../core/shared/shared.module";
 import { CreateEditHeroComponent } from './pages/create-edit-hero/create-edit-hero.component';
 import { HeroGalleryComponent } from './pages/hero-gallery/hero-gallery.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatButtonToggleModule,
         MatButtonModule,
         MatInputModule,
+        MatDialogModule,
         FormsModule,
         SharedModule,
         ReactiveFormsModule

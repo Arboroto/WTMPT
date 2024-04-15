@@ -6,6 +6,9 @@ import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter.pipe'
 import { CapitalizeWordPipe } from './pipes/capitalize-word.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -16,7 +19,8 @@ import { HeaderComponent } from './components/header/header.component';
     CapitalizeFirstLetterPipe,
     CapitalizeWordPipe,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ConfirmModalComponent
   ],
   exports: [
     CustomLoaderComponent,
@@ -27,7 +31,9 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class SharedModule { }

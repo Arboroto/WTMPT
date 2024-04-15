@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Hero } from 'src/app/core/models/hero.interface';
+import { ConfirmModalComponent } from 'src/app/core/shared/components/confirm-modal/confirm-modal.component';
 import { HeroService } from 'src/app/core/shared/services/hero.service';
 
 @Component({
@@ -9,9 +11,18 @@ import { HeroService } from 'src/app/core/shared/services/hero.service';
 })
 export class HeroListElementComponent {
 
-  constructor(private heroService: HeroService){}
+  constructor(
+    private heroService: HeroService, 
+    private dialog: MatDialog){}
 
   @Input() hero!: Hero;
+
+  openDialog(){
+    const dialogRef = this.dialog.open(ConfirmModalComponent);
+    dialogRef.afterClosed().subscribe(res=>{
+      res ? this.deleteHero() : '';
+    })
+  }
 
   deleteHero() {
     this.heroService.deleteHero(this.hero.id!).subscribe({
