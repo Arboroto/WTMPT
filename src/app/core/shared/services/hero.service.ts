@@ -28,15 +28,15 @@ export class HeroService {
 
   //#region ENDPOINTS
   getHeroes(): Observable<Hero[]> {
-    // this.loaderService.show();
+   this.loaderService.show();
     const localStoargeHeores = this.getLocalStorageHeores();
     
     return localStoargeHeores !== null ? 
       of(localStoargeHeores).pipe(delay(1000), finalize(() => {
-       // this.loaderService.hide();
+        this.loaderService.hide();
       })) 
       : this.http.get<Hero[]>(this.heroesUrl).pipe(delay(1000), finalize(() => {
-        // this.loaderService.hide();
+         this.loaderService.hide();
       }));
   }
 
