@@ -1,5 +1,7 @@
 @import '../../../core/shared/theme/colors';
-
+main{
+    text-align: center;
+}
   
   .landing {
     display: grid;
@@ -38,5 +40,24 @@
     padding:5px ;
     font-size: 16px;
     margin-top: 10px;
+  }
+
+  .superLoader{
+    background-color: $color-light;
+    width: 80%;
+    color: $color-text;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 6px 6px 2px 0px black;
+    p{
+        margin: 0px !important;
+        font-size: x-large;
+    }
+    
+  }
+
+  .superLoader:hover{
+    background-color: $color-accent;
+    cursor: pointer;
   }
   

@@ -9,27 +9,34 @@ import { CustomLoaderService } from '../components/custom-loader/custom-loader.s
   providedIn: 'root'
 })
 export class HeroService {
+  
   private heroesUrl = 'assets/heroes.json';
   private heroesSubject: BehaviorSubject<Hero[]> = new BehaviorSubject<Hero[]>([]);
   public heroes$: Observable<Hero[]> = this.heroesSubject.asObservable();
   public loader: boolean = false;
+
+  private API_URL: string = "https://catfact.ninja/fact";
   
   constructor(
     private http: HttpClient,
     private loaderService: CustomLoaderService ) { 
   }
 
+  callLoader(): Observable<any> {
+    return this.http.get<any>(this.API_URL);
+  }
+
   //#region ENDPOINTS
   getHeroes(): Observable<Hero[]> {
-    this.loaderService.show();
+    // this.loaderService.show();
     const localStoargeHeores = this.getLocalStorageHeores();
     
     return localStoargeHeores !== null ? 
       of(localStoargeHeores).pipe(delay(1000), finalize(() => {
-        this.loaderService.hide();
+       // this.loaderService.hide();
       })) 
       : this.http.get<Hero[]>(this.heroesUrl).pipe(delay(1000), finalize(() => {
-        this.loaderService.hide();
+        // this.loaderService.hide();
       }));
   }
 

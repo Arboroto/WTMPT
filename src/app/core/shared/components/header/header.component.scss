@@ -10,15 +10,19 @@ header{
     height: 97px;
     padding: 15px;
     box-shadow: 6px 6px 2px 0px black;
-    .logo{
-        width: 80px;
-        border-radius: 50%;
+    .icon{
+        p{ text-align: center; }
+        .logo{
+            width: 80px;
+            border-radius: 50%;
+        }
+    
+        .logo:hover{
+            border: #fff 5px solid;
+            cursor: pointer;
+        }
     }
-
-    .logo:hover{
-        border: #fff 5px solid;
-        cursor: pointer;
-    }
+    
 
     .text{
         border-left: 2px #fff solid;

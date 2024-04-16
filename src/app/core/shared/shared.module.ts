@@ -10,6 +10,8 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DefaultModalComponent } from './components/default-modal/default-modal.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 
@@ -22,7 +24,7 @@ import { DefaultModalComponent } from './components/default-modal/default-modal.
     FooterComponent,
     HeaderComponent,
     ConfirmModalComponent,
-    DefaultModalComponent
+    DefaultModalComponent,
   ],
   exports: [
     CustomLoaderComponent,
@@ -30,12 +32,13 @@ import { DefaultModalComponent } from './components/default-modal/default-modal.
     CapitalizeFirstLetterPipe,
     CapitalizeWordPipe,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule 
   ]
 })
 export class SharedModule { }

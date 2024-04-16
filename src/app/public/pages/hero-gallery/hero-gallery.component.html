@@ -10,7 +10,7 @@
         </mat-button-toggle-group>
 
         <mat-form-field class="searchInput">
-            <mat-label>Busca a tu héroe</mat-label>
+            <mat-label>{{'Busca a tu héroe' | capitalizeWord}}</mat-label>
             <input matInput type="text" [value]="value | capitalizeFirstLetter" [(ngModel)]="value">
         </mat-form-field>
     </div>
