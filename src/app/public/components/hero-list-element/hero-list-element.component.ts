@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Hero } from 'src/app/core/models/hero.interface';
 import { ConfirmModalComponent } from 'src/app/core/shared/components/confirm-modal/confirm-modal.component';
 import { HeroService } from 'src/app/core/shared/services/hero.service';
@@ -13,7 +14,8 @@ export class HeroListElementComponent {
 
   constructor(
     private heroService: HeroService, 
-    private dialog: MatDialog){}
+    private dialog: MatDialog,
+    private router: Router){}
 
   @Input() hero!: Hero;
 
@@ -32,4 +34,9 @@ export class HeroListElementComponent {
       }
     })
   }
+
+  editHero(h: Hero){
+    this.router.navigate(['public/form'], { queryParams: { id: h.id } });
+  }
+
 }

@@ -17,6 +17,8 @@ import { CreateEditHeroComponent } from './pages/create-edit-hero/create-edit-he
 import { HeroGalleryComponent } from './pages/hero-gallery/hero-gallery.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatButtonModule,
         MatInputModule,
         MatDialogModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
         FormsModule,
         SharedModule,
         ReactiveFormsModule

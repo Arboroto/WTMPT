@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { DefaultModalComponent } from './components/default-modal/default-modal.component';
 
 
 
@@ -20,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     CapitalizeWordPipe,
     FooterComponent,
     HeaderComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    DefaultModalComponent
   ],
   exports: [
     CustomLoaderComponent,

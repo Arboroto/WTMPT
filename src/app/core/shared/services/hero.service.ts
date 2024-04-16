@@ -34,6 +34,9 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero | undefined> {
+    console.log(typeof(id))
+    console.log(id);
+    
     this.loaderService.show();
     return this.getHeroes().pipe(
       map(heroes => heroes.find(hero => hero.id === id)),

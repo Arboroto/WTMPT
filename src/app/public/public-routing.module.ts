@@ -19,6 +19,10 @@ const routes: Routes = [
         component: HeroGalleryComponent
       },
       {
+        path: 'form/:id',
+        component: CreateEditHeroComponent
+      },
+      {
         path: 'form',
         component: CreateEditHeroComponent
       },

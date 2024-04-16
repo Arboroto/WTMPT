@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-default-modal',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./default-modal.component.scss']
 })
 export class DefaultModalComponent {
-
+  constructor(public dialogRef: MatDialogRef<DefaultModalComponent>){}
 }

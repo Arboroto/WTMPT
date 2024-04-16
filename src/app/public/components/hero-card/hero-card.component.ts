@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Hero } from 'src/app/core/models/hero.interface';
+import { ConfirmModalComponent } from 'src/app/core/shared/components/confirm-modal/confirm-modal.component';
 import { HeroService } from 'src/app/core/shared/services/hero.service';
 
 @Component({
@@ -11,15 +14,28 @@ export class HeroCardComponent {
 
   @Input() hero!: Hero;
 
-  constructor(private heroService: HeroService){}
+  constructor(
+    private heroService: HeroService, 
+    private dialog: MatDialog,
+    private router: Router){}
 
-  deleteHero() {
-    this.heroService.deleteHero(this.hero.id!).subscribe({
-      next: (res)=>{},
-      error: (res)=>{
-        console.error("Error al eliminar", res)
-      }
-    })
-  }
-
+    openDialog(){
+      const dialogRef = this.dialog.open(ConfirmModalComponent);
+      dialogRef.afterClosed().subscribe(res=>{
+        res ? this.deleteHero() : '';
+      })
+    }
+  
+    deleteHero() {
+      this.heroService.deleteHero(this.hero.id!).subscribe({
+        next: (res)=>{},
+        error: (res)=>{
+          console.error("Error al eliminar", res)
+        }
+      })
+    }
+  
+    editHero(h: Hero){
+      this.router.navigate(['public/form'], { queryParams: { id: h.id } });
+    }
 }
