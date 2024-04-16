@@ -15,7 +15,11 @@ This project is a Single Page Application (SPA) that allows managing a registry 
 - Mock data service in JSON using observables. 
 - Loader service. 
 - Loader interceptor for HTTP requests. 
-- Angular Material library. - Tests added to pipes. - Reactive programming in forms. - Modularized components for reusability. - Others...
+- Angular Material library.
+- Tests added to pipes.
+- Reactive programming in forms.
+- Modularized components for reusability.
+- Others...
 
 ## Development server
 
